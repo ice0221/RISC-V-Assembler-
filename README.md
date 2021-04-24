@@ -11,7 +11,7 @@ Refer to https://github.com/michaeljclark/rv8/blob/master/doc/pdf/riscv-instruct
 1. Error : it don't have this instruction
 2. Error : it don't have this label
 3. Error : it don't have this register
-## input
+## Input
 ```
     label:add x2,x21,x23
     beq x2,x21,label
@@ -23,7 +23,7 @@ Refer to https://github.com/michaeljclark/rv8/blob/master/doc/pdf/riscv-instruct
     slli x2,x21,23
 ```
 
-## output
+## Output
 ```
     00000001011110101000000100110011
     11111111010100010000111011100011
