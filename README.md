@@ -1,11 +1,14 @@
 # RISC-V-Assembler
 Use C++ language finish simple algorithm about RISC-V to machine code.
 
-## Input rule
-1. 只能夠使用I,R,S type的指令
-2. I type指令只能使用正數
-3. 空格只會出現在指令與暫存器中間
-4. 若全部指令都執行完成時，則會顯示machine code
+## Input Rule
+1. Use ":" after certain label
+2. Use "," between two register
+3. Use " " btween kind of instruction and register
+## Kind of Error
+1. Error : it don't have this instruction
+2. Error : it don't have this label
+3. Error : it don't have this register
 ## input
 ```
     label:add x2,x21,x23
