@@ -1,5 +1,6 @@
 # RISC-V-Assembler
 Use C++ language finish simple algorithm about RISC-V to machine code.
+Refer to https://github.com/michaeljclark/rv8/blob/master/doc/pdf/riscv-instructions.pdf page1. 
 
 ## Input Rule
 1. Use ":" after certain label
