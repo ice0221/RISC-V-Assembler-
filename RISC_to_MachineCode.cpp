@@ -3,6 +3,7 @@
 //README
 //
 //The version_1 is finished in 2021/04/24
+//The version_1 is updated  in 2021/04/27
 //---------------------------------------------
 //
 //The rule of input:
@@ -20,15 +21,17 @@
 //---------------------------------------------
 //
 //Input,Output Example:
-//Input
-//label:add x2,x21,x23
-//beq x2,x21,label
-//label:add x2,x21,x23
-//jalr x1,x24,label
-//sb x2,10(x21)
-//lb x2,10(x21)
-//addi x2,x21,23
-//slli x2,x21,23
+/*
+Input
+label:add x2,x21,x23
+beq x2,x21,label
+label:add x2,x21,x23
+jalr x1,x24,label
+sb x2,10(x21)
+lb x2,10(x21)
+addi x2,x21,23
+slli x2,x21,23
+*/
 //
 //Output
 //000000010111101010000001001100111111111101010
@@ -65,11 +68,11 @@ string sub(string inst);
 string sll(string inst);
 string slt(string inst);
 string sltu(string inst);
-string xor(string inst);
+string _xor(string inst);
 string srl(string inst);
 string sra(string inst);
-string or(string inst);
-string and(string inst);
+string _or(string inst);
+string _and(string inst);
 //--------S type-------------
 string sb(string inst);
 string sh(string inst);
@@ -110,11 +113,11 @@ string SUB("sub");
 string SLL("sll");
 string SLT("slt");
 string SLTU("sltu");
-string XOR("xor");
+string _XOR("xor");
 string SRL("srl");
 string SRA("sra");
-string OR("or");
-string AND("and");
+string _OR("or");
+string _AND("and");
 //--------S type-------------
 string SB("sb");
 string SH("sh");
@@ -258,9 +261,9 @@ void main()
 		{
 			machine_code_reg = sltu(inst);
 		}
-		else if (kind == XOR)
+		else if (kind == _XOR)
 		{
-			machine_code_reg = xor (inst);
+			machine_code_reg = _xor (inst);
 		}
 		else if (kind == SRL)
 		{
@@ -270,13 +273,13 @@ void main()
 		{
 			machine_code_reg = sra(inst);
 		}
-		else if (kind == OR)
+		else if (kind == _OR)
 		{
-			machine_code_reg = or (inst);
+			machine_code_reg = _or (inst);
 		}
-		else if (kind == AND)
+		else if (kind == _AND)
 		{
-			machine_code_reg = and (inst);
+			machine_code_reg = _and (inst);
 		}
 		//--------S type-------------
 		else if (kind == SB)
@@ -1026,7 +1029,7 @@ string sltu(string inst)
 
 	return machine_code;
 }
-string xor(string inst)
+string _xor(string inst)
 {
 	string machine_code;//local
 	string rs1, rs2, rd;
@@ -1350,7 +1353,7 @@ string sra(string inst)
 
 	return machine_code;
 }
-string or(string inst)
+string _or(string inst)
 {
 	string machine_code;//local
 	string rs1, rs2, rd;
@@ -1456,7 +1459,7 @@ string or(string inst)
 
 	return machine_code;
 }
-string and(string inst)
+string _and(string inst)
 {
 	string machine_code;//local
 	string rs1, rs2, rd;
@@ -4803,3 +4806,4 @@ string bgeu(string inst)
 
 	return machine_code;
 }
+
